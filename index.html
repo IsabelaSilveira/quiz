@@ -52,7 +52,7 @@
         R1.y = 425;
         
         R2.x = 20;
-        R2.y = 415;
+        R2.y = 515;
         
         R3.x = 20;
         R3.y = 605;
@@ -167,7 +167,7 @@
             btnHome.x = 705;
             btnHome.y = 20;
             btnHome.addEventListener("click", menuPrincipal);
-            stage.addChild(btnHome);
+            stage.addChild(btnHome); 
             
         }
 
@@ -179,7 +179,6 @@
         function fase(x){
             
             stage.update(x);
-            
             document.getElementById("Pergunta").style.visibility = "hidden";
             document.getElementById("RespostaA").style.visibility = "hidden";
             document.getElementById("RespostaB").style.visibility = "hidden";
@@ -187,6 +186,7 @@
             document.getElementById("RA").style.visibility = "hidden";
             document.getElementById("RB").style.visibility = "hidden";
             document.getElementById("RC").style.visibility = "hidden";
+            
         }
     </script>
 </body>
