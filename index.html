@@ -16,9 +16,9 @@
     <input type="text" class="inpt-txt" id="RespostaB" placeholder="Digite a segunda resposta">
     <input type="text" class="inpt-txt" id="RespostaC" placeholder="Digite a terceira resposta">
         
-    <input type="radio" class="inpt-radio" name="Certa" value="RA">
-    <input type="radio" class="inpt-radio" name="Certa" value="RB">
-    <input type="radio" class="inpt-radio" name="Certa" value="RC" checked>
+    <input type="radio" id="RA" class="inpt-radio" name="Certa" value="RA">
+    <input type="radio" id="RB" class="inpt-radio" name="Certa" value="RB">
+    <input type="radio" id="RC" class="inpt-radio" name="Certa" value="RC" checked>
     </div>
     
 	<canvas id="tela" width="800" height="800"></canvas>
@@ -37,33 +37,25 @@
         R2 = new createjs.DOMElement($( "input[name=Certa]" )[ 1 ]);
         R3 = new createjs.DOMElement($( "input[name=Certa]" )[ 2 ]);
         Pergunta.x = 20;
-        Pergunta.y = 240;
+        Pergunta.y = 270;
         
         RespostaA.x = 50;
-        RespostaA.y = 370;
+        RespostaA.y = 400;
         
         RespostaB.x = 50;
-        RespostaB.y = 460;
+        RespostaB.y = 490;
         
         RespostaC.x = 50;
-        RespostaC.y = 550;
+        RespostaC.y = 580;
         
         R1.x = 20;
-        R1.y = 395;
+        R1.y = 425;
         
         R2.x = 20;
-        R2.y = 485;
+        R2.y = 415;
         
         R3.x = 20;
-        R3.y = 575;
-        
-        Pergunta.style.visibility = 'hidden';
-        RespostaA.style.visibility = 'hidden';
-        RespostaB.style.visibility = 'hidden';
-        RespostaC.style.visibility = 'hidden';
-        R1.style.visibility = 'hidden';
-        R2.style.visibility = 'hidden';
-        R3.style.visibility = 'hidden';
+        R3.y = 605;
         
         stage.addChild(Pergunta);
         stage.addChild(RespostaA);
@@ -168,7 +160,7 @@
             var bg = new createjs.Bitmap("bg-adicionar.png");
             bg.x = 0;
             bg.y = 0;
-            stage.addChild(bg);  
+            stage.addChild(bg); 
             
             //criando o botão de voltar
             var btnHome = new createjs.Bitmap("Btn_home.png");
@@ -176,6 +168,7 @@
             btnHome.y = 20;
             btnHome.addEventListener("click", menuPrincipal);
             stage.addChild(btnHome);
+            
         }
 
         createjs.Ticker.on("tick",fase);
@@ -186,6 +179,14 @@
         function fase(x){
             
             stage.update(x);
+            
+            document.getElementById("Pergunta").style.visibility = "hidden";
+            document.getElementById("RespostaA").style.visibility = "hidden";
+            document.getElementById("RespostaB").style.visibility = "hidden";
+            document.getElementById("RespostaC").style.visibility = "hidden";
+            document.getElementById("RA").style.visibility = "hidden";
+            document.getElementById("RB").style.visibility = "hidden";
+            document.getElementById("RC").style.visibility = "hidden";
         }
     </script>
 </body>
