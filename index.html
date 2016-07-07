@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <script src="js/easeljs-0.8.2.combined.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    
+</head>
+<body>
+
+	<canvas id="tela" width="800" height="800"></canvas>
+    
+    <script>
+        //inicializando o canvas
+        var stage = new createjs.Stage("tela");
+        
+        
+        function menuPrincipal(){
+            //criando o bg e botões
+            var bg = new createjs.Bitmap("bg.png");
+            var btnPlay = new createjs.Bitmap("btn-play.png");
+            var btnEditar = new createjs.Bitmap("btn-editar.png");
+            
+            //posicionando o bg e os botões
+            bg.x = 0;
+            bg.y = 0;
+            btnPlay.x = 365;
+            btnPlay.y = 235;
+            btnEditar.x = 705;
+            btnEditar.y = 20;
+            
+            //chamando a função que traz a tela de jogar
+            btnPlay.addEventListener("click", play);
+            btnEditar.addEventListener("click", editar);
+
+            //adicionando o bg e os botões
+            stage.addChild(bg);
+            stage.addChild(btnPlay);
+            stage.addChild(btnEditar);
+            
+            //removendo botões de outras telas
+            btnAdd.removeEventListener("click", adicionar);
+            btnZerar.removeEventListener("click");
+        }
+        
+        function play(){
+            //criando o bg
+            var bg = new createjs.Bitmap("bg-play.png");
+            bg.x = 0;
+            bg.y = 0;
+            stage.addChild(bg);  
+            
+            //criando o botão de voltar
+            var btnHome = new createjs.Bitmap("Btn_home.png");
+            btnHome.x = 705;
+            btnHome.y = 20;
+            btnHome.addEventListener("click", menuPrincipal);
+            stage.addChild(btnHome);
+        }
+        
+        function editar(){
+            //criando o bg
+            var bg = new createjs.Bitmap("bg-editar.png");
+            bg.x = 0;
+            bg.y = 0;
+            stage.addChild(bg);  
+
+            //criando o botão para tela adicionar
+            var btnAdd = new createjs.Bitmap("btn-adicionar.png");
+            btnAdd.x = 148;
+            btnAdd.y = 370;
+            btnAdd.addEventListener("click", adicionar);
+            stage.addChild(btnAdd);
+
+            //criando o botão para zerar
+            var btnZerar = new createjs.Bitmap("btn-zerar.png");
+            btnZerar.x = 558;
+            btnZerar.y = 370;
+            stage.addChild(btnZerar);
+            
+            
+            //criando o botão de voltar
+            var btnHome = new createjs.Bitmap("Btn_home.png");
+            btnHome.x = 705;
+            btnHome.y = 20;
+            btnHome.addEventListener("click", menuPrincipal);
+            stage.addChild(btnHome);
+        }
+        
+        function resultado(){
+            //criando o bg
+            var bg = new createjs.Bitmap("bg-resultado.png");
+            bg.x = 0;
+            bg.y = 0;
+            stage.addChild(bg);  
+            
+            //criando o botão de voltar
+            var btnHome = new createjs.Bitmap("Btn_home.png");
+            btnHome.x = 705;
+            btnHome.y = 20;
+            btnHome.addEventListener("click", menuPrincipal);
+            stage.addChild(btnHome);
+        }
+        
+        function adicionar(){
+            //criando o bg
+            var bg = new createjs.Bitmap("bg-adicionar.png");
+            bg.x = 0;
+            bg.y = 0;
+            stage.addChild(bg);  
+            
+            //criando o botão de voltar
+            var btnHome = new createjs.Bitmap("Btn_home.png");
+            btnHome.x = 705;
+            btnHome.y = 20;
+            btnHome.addEventListener("click", menuPrincipal);
+            stage.addChild(btnHome);
+        }
+
+        createjs.Ticker.on("tick",fase);
+
+        menuPrincipal();
+        
+        //implementando a fase
+        function fase(x){
+            
+            stage.update(x);
+        }
+    </script>
+</body>
+</html>

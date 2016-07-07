@@ -1,0 +1,9 @@
+body,html{ 
+    background: #2a2a2a;
+    margin: 0 auto;
+}
+
+#tela{ 
+    display:table; 
+    margin: 0 auto;
+}
