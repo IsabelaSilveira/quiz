@@ -3,17 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Quiz</title>
-    <script src="js/easeljs-0.8.2.combined.js"></script>
+    <script src="js/createjs.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
     <link rel="stylesheet" href="css/main.css">
     
 </head>
 <body>
 
+    <input type="text" class="inpt-pergunta" id="Pergunta" placeholder="Digite a pergunta">
+    
+    <input type="radio" class="inpt-radio" name="Certa" value="RA">
+    <input type="text" class="inpt-txt" id="RespostaA" placeholder="Digite a primeira resposta">
+
+    <input type="radio" class="inpt-radio" name="Certa" value="RB">
+    <input type="text" class="inpt-txt" id="RespostaB" placeholder="Digite a segunda resposta">
+
+    <input type="radio" class="inpt-radio" name="Certa" value="RC" checked>
+    <input type="text" class="inpt-txt" id="RespostaC" placeholder="Digite a terceira resposta">
+    
 	<canvas id="tela" width="800" height="800"></canvas>
     
     <script>
         //inicializando o canvas
         var stage = new createjs.Stage("tela");
+        var btnAdd;
+        var btnZerar; 
+        
+        Pergunta = new createjs.DOMElement($( "input" )[ 0 ]);
+        RespostaA = new createjs.DOMElement($( "input" )[ 1 ]);
+        RespostaB = new createjs.DOMElement($( "input" )[ 2 ]);
+        RespostaC = new createjs.DOMElement($( "input" )[ 3 ]);
+        R1 = new createjs.DOMElement($( "input[name=Certa]" )[ 0 ]);
+        R2 = new createjs.DOMElement($( "input[name=Certa]" )[ 1 ]);
+        R3 = new createjs.DOMElement($( "input[name=Certa]" )[ 2 ]);
+        Pergunta.x = 20;
+        Pergunta.y = 240;
+        
+        RespostaA.x = 100;
+        RespostaA.y = 370;
+        
+        RespostaB.x = 100;
+        RespostaB.y = 460;
+        
+        RespostaC.x = 100;
+        RespostaC.y = 550;
+        R1.x = 250;
+        R1.y = 370;
+        
+        R2.x = 250;
+        R2.y = 460;
+        
+        R3.x = 250;
+        R3.y = 550;
         
         
         function menuPrincipal(){
@@ -40,8 +81,9 @@
             stage.addChild(btnEditar);
             
             //removendo botões de outras telas
-            btnAdd.removeEventListener("click", adicionar);
-            btnZerar.removeEventListener("click");
+            stage.removeChild(btnAdd);
+            stage.removeChild(btnZerar);
+            
         }
         
         function play(){
@@ -67,14 +109,14 @@
             stage.addChild(bg);  
 
             //criando o botão para tela adicionar
-            var btnAdd = new createjs.Bitmap("btn-adicionar.png");
+            btnAdd = new createjs.Bitmap("btn-adicionar.png");
             btnAdd.x = 148;
             btnAdd.y = 370;
             btnAdd.addEventListener("click", adicionar);
             stage.addChild(btnAdd);
 
             //criando o botão para zerar
-            var btnZerar = new createjs.Bitmap("btn-zerar.png");
+            btnZerar = new createjs.Bitmap("btn-zerar.png");
             btnZerar.x = 558;
             btnZerar.y = 370;
             stage.addChild(btnZerar);
