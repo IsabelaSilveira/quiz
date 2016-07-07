@@ -48,19 +48,31 @@
         RespostaC.x = 50;
         RespostaC.y = 550;
         
-        R1.x = 250;
-        R1.y = 370;
+        R1.x = 20;
+        R1.y = 395;
         
-        R2.x = 250;
-        R2.y = 460;
+        R2.x = 20;
+        R2.y = 485;
         
-        R3.x = 250;
-        R3.y = 550;
+        R3.x = 20;
+        R3.y = 575;
+        
+        Pergunta.style.visibility = 'hidden';
+        RespostaA.style.visibility = 'hidden';
+        RespostaB.style.visibility = 'hidden';
+        RespostaC.style.visibility = 'hidden';
+        R1.style.visibility = 'hidden';
+        R2.style.visibility = 'hidden';
+        R3.style.visibility = 'hidden';
         
         stage.addChild(Pergunta);
         stage.addChild(RespostaA);
         stage.addChild(RespostaB);
         stage.addChild(RespostaC);
+        stage.addChild(R1);
+        stage.addChild(R2);
+        stage.addChild(R3);
+        
         
         
         function menuPrincipal(){
