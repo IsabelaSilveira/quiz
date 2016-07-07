@@ -9,17 +9,17 @@
     
 </head>
 <body>
-
+    <div class="box">
     <input type="text" class="inpt-pergunta" id="Pergunta" placeholder="Digite a pergunta">
     
-    <input type="radio" class="inpt-radio" name="Certa" value="RA">
     <input type="text" class="inpt-txt" id="RespostaA" placeholder="Digite a primeira resposta">
-
-    <input type="radio" class="inpt-radio" name="Certa" value="RB">
     <input type="text" class="inpt-txt" id="RespostaB" placeholder="Digite a segunda resposta">
-
-    <input type="radio" class="inpt-radio" name="Certa" value="RC" checked>
     <input type="text" class="inpt-txt" id="RespostaC" placeholder="Digite a terceira resposta">
+        
+    <input type="radio" class="inpt-radio" name="Certa" value="RA">
+    <input type="radio" class="inpt-radio" name="Certa" value="RB">
+    <input type="radio" class="inpt-radio" name="Certa" value="RC" checked>
+    </div>
     
 	<canvas id="tela" width="800" height="800"></canvas>
     
@@ -27,7 +27,7 @@
         //inicializando o canvas
         var stage = new createjs.Stage("tela");
         var btnAdd;
-        var btnZerar; 
+        var btnZerar;
         
         Pergunta = new createjs.DOMElement($( "input" )[ 0 ]);
         RespostaA = new createjs.DOMElement($( "input" )[ 1 ]);
@@ -39,14 +39,15 @@
         Pergunta.x = 20;
         Pergunta.y = 240;
         
-        RespostaA.x = 100;
+        RespostaA.x = 50;
         RespostaA.y = 370;
         
-        RespostaB.x = 100;
+        RespostaB.x = 50;
         RespostaB.y = 460;
         
-        RespostaC.x = 100;
+        RespostaC.x = 50;
         RespostaC.y = 550;
+        
         R1.x = 250;
         R1.y = 370;
         
@@ -55,6 +56,11 @@
         
         R3.x = 250;
         R3.y = 550;
+        
+        stage.addChild(Pergunta);
+        stage.addChild(RespostaA);
+        stage.addChild(RespostaB);
+        stage.addChild(RespostaC);
         
         
         function menuPrincipal(){

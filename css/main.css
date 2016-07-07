@@ -4,10 +4,11 @@ body,html{
 }
 
 #tela{ 
+/*
     display:table; 
     margin: 0 auto;
+*/
 }
-
 .inpt-pergunta{
     background: #ab564a;
     border: 0;
@@ -16,7 +17,7 @@ body,html{
     color: #fff;
     font-size: 20px;
     height: 70px;
-    width: 670px;
+    width: 732px;
     padding: 0 15px;
     position: absolute;
 }
