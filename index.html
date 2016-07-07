@@ -65,7 +65,25 @@
         stage.addChild(R2);
         stage.addChild(R3);
         
+        function hideInputs(){
+            Pergunta.visible = false;
+            RespostaA.visible = false;
+            RespostaB.visible = false;
+            RespostaC.visible = false;
+            R1.visible = false;
+            R2.visible = false;
+            R3.visible = false;        
+        }
         
+        function showInputs(){
+            Pergunta.visible = true;
+            RespostaA.visible = true;
+            RespostaB.visible = true;
+            RespostaC.visible = true;
+            R1.visible = true;
+            R2.visible = true;
+            R3.visible = true;        
+        }
         
         function menuPrincipal(){
             //criando o bg e botões
@@ -93,7 +111,7 @@
             //removendo botões de outras telas
             stage.removeChild(btnAdd);
             stage.removeChild(btnZerar);
-            
+            hideInputs();
         }
         
         function play(){
@@ -168,7 +186,7 @@
             btnHome.y = 20;
             btnHome.addEventListener("click", menuPrincipal);
             stage.addChild(btnHome); 
-            
+            showInputs();
         }
 
         createjs.Ticker.on("tick",fase);
@@ -177,15 +195,14 @@
         
         //implementando a fase
         function fase(x){
-            
             stage.update(x);
-            document.getElementById("Pergunta").style.visibility = "hidden";
-            document.getElementById("RespostaA").style.visibility = "hidden";
-            document.getElementById("RespostaB").style.visibility = "hidden";
-            document.getElementById("RespostaC").style.visibility = "hidden";
-            document.getElementById("RA").style.visibility = "hidden";
-            document.getElementById("RB").style.visibility = "hidden";
-            document.getElementById("RC").style.visibility = "hidden";
+//            document.getElementById("Pergunta").style.visibility = "hidden";
+//            document.getElementById("RespostaA").style.visibility = "hidden";
+//            document.getElementById("RespostaB").style.visibility = "hidden";
+//            document.getElementById("RespostaC").style.visibility = "hidden";
+//            document.getElementById("RA").style.visibility = "hidden";
+//            document.getElementById("RB").style.visibility = "hidden";
+//            document.getElementById("RC").style.visibility = "hidden";
             
         }
     </script>
